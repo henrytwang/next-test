@@ -1,0 +1,9 @@
+<div class="content">
+<% flash.each do |key, value| %>
+  <div class="<%= flash_class(key) %>">
+    <%= value %>
+  </div>
+<% end %>
+
+<%= render "signup_form", :locals => { :user => @user } %>
+</div>

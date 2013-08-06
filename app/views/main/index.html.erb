@@ -1,0 +1,12 @@
+<div class="row large-2 large-centered columns">
+  <h1 class="main-title">Next Test</h1>
+</div>
+
+<div class="row">
+  <div class="large-6 large-centered columns">
+  <%= form_for @page, url: pages_path do |f| %>
+    <%= f.text_field :url, placeholder: "Type your page url here", autofocus: true%>
+    <%= f.submit "Start Testing" %>
+  <% end %>
+  </div>
+</div>
