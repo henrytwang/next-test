@@ -17,9 +17,11 @@ group :test, :development do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'binding_of_caller'
 end
 
 gem 'jquery-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'imgkit'
