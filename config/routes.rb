@@ -1,4 +1,19 @@
 Nexttest::Application.routes.draw do
+
+  resources :pages
+  resources :comments
+  resources :votes
+  resources :main
+
+  resources :users
+  match '/signup' => 'users#new'
+
+  get    '/login'  => 'sessions#new'
+  post   '/login'  => 'sessions#create'
+  delete '/logout' => 'sessions#destroy', :via => :delete
+
+  root :to => 'main#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

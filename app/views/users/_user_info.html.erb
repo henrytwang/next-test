@@ -1,0 +1,9 @@
+<div class="user-info">
+  <% if user.image.present? %>
+    <div class="avatar"><%= link_to user do %>
+      <%= image_tag user.image.thumb %>
+      <% end %>
+    </div>
+  <% end %>
+    <div class="username"><%= link_to user.username, user %><br></div>
+</div>
