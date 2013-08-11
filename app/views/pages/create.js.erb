@@ -1,0 +1,4 @@
+jQuery('.url-form').hide().after("<%= j render partial: 'link', locals: {page: @page} %>")
+var url_link = document.getElementById ('page-url');
+url_link.focus ();
+url_link.select ();
