@@ -1,12 +1,24 @@
-<div class="row large-2 large-centered columns">
+<div class="row large-6 large-centered columns">
   <h1 class="main-title">Next Test</h1>
+  <h2 class="secondary-title">Get advice on which A/B tests to run on your landing page.</h2>
 </div>
+
+<h3>Step 1: Enter your landing page's url</h3>
 
 <div class="row">
   <div class="large-6 large-centered columns">
-  <%= form_for @page, url: pages_path do |f| %>
-    <%= f.text_field :url, placeholder: "Type your page url here", autofocus: true%>
-    <%= f.submit "Start Testing" %>
-  <% end %>
+    <%= form_for @page, url: pages_path do |f| %>
+      <%= f.text_field :url, value: "http://" %>
+      <%= f.submit "Start Testing", class: "large-6 large-offset-3 columns" %>
+    <% end %>
   </div>
 </div>
+
+<% flash.each do |key, value| %>
+<h3>Step 2: Copy your feedback link</h3>
+  <div class="<%= flash_class(key) %>">
+    <%= text_area_tag :url, "http://localhost:3000/pages/#{value}" %>
+  </div>
+
+<h3>Step 3: Share this link with others.</h3>
+<% end %>

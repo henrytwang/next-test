@@ -15,10 +15,11 @@ ActiveRecord::Schema.define(:version => 20130806005611) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "site_id"
+    t.integer  "page_id"
+    t.integer  "question_id"
     t.string   "text"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "pages", :force => true do |t|

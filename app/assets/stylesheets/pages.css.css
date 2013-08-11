@@ -1,0 +1,12 @@
+.feedback-bar {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: lightgrey;
+  padding: 30px;
+}
+
+.image {
+  width: 1024px;
+  margin: 0 auto;
+}

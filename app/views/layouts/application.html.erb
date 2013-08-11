@@ -16,15 +16,31 @@
   	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
   	<%= stylesheet_link_tag    "application" %>
+    <%= stylesheet_link_tag    "annotorious" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
+    <script type="text/javascript" src="annotorious.min.js"></script>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
-
+    <div class="row">
+      <div class="user_profile large-12">
+        <ul class="nav">
+          <%= link_to "Home", root_path %>
+        <% if current_user %>
+          <li><%= link_to "Logout", logout_path, :method => 'delete' %></li>
+        <% else %>
+          <li><%= link_to "Login", login_path %></li>
+          <li><%= link_to "Signup", signup_path%></li>
+        <% end %>
+        </ul>
+<!--         Current Page Image: <%= session[:current_page_image] %>
+        Current Page URL: <%= session[:current_page_url] %> -->
+      </div>
+    </div>
     <%= yield %>
 
-    
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>
