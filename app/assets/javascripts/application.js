@@ -22,6 +22,10 @@ jQuery.ajaxSetup({
 });
 
 jQuery(document).ready(function($){
+  $('.text-field').click(function(){
+    $('.text-field').attr("value", "http://");
+  });
+
   $('.url-form').submit(function(){
     $.post($(this).attr('action'), $(this).serialize(), null, 'script');
     return false;

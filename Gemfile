@@ -27,3 +27,6 @@ gem 'mini_magick'
 gem 'imgkit'
 gem 'websnap'
 gem 'smusher'
+gem 'sidekiq'
+gem 'sinatra', require: false
+gem 'slim'

@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Nexttest::Application.routes.draw do
 
   resources :pages
@@ -13,6 +15,8 @@ Nexttest::Application.routes.draw do
   delete '/logout' => 'sessions#destroy', :via => :delete
 
   root :to => 'main#index'
+
+  mount Sidekiq::Web, at: '/sidekiq'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
