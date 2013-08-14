@@ -12,8 +12,11 @@
         <%= f.label :comment_two, "What would you change or test on this landing page?" %>
         <%= f.text_field  :comment_two %>
         <%= hidden_field_tag :page_id, "1" %>
-        <%= f.submit "Send Feedback" %>
+        <%= f.submit "Send Feedback", class: 'button' %>
     <% end %>
   </div>
 </div>
 </div>
+
+
+
