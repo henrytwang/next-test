@@ -1,7 +1,5 @@
 class CommentsController < ApplicationController
   def create
-    p "start here"
-    p params
     comment_one = Comment.new(:user_id => (current_user.id if current_user), :page_id => params[:page_id], :question_id => 1, :text => params[:comment][:comment_one])
     comment_two = Comment.new(:user_id => (current_user.id if current_user), :page_id => params[:page_id], :question_id => 2, :text => params[:comment][:comment_two])
 
