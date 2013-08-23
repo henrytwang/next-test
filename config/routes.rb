@@ -2,13 +2,16 @@ require 'sidekiq/web'
 
 Nexttest::Application.routes.draw do
 
-  resources :pages
+  resources :pages do
+    resources :results
+  end
   resources :comments
   resources :votes
   resources :main
 
   resources :users
   match '/signup' => 'users#new'
+
 
   get    '/login'  => 'sessions#new'
   post   '/login'  => 'sessions#create'

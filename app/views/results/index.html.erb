@@ -1,0 +1,13 @@
+<p>What do you like about the Landing Page Optimization on this page?</p>
+<ul>
+<% @first_comments.each do |comment| %>
+  <li><%= comment.text %></li>
+<% end %>
+</ul>
+
+<p>What would you change or test on this landing page?</p>
+<ul>
+<% @second_comments.each do |comment| %>
+  <li><%= comment.text %></li>
+<% end %>
+</ul>
