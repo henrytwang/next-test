@@ -1,3 +1,7 @@
+require 'websnap'
+require 'smusher'
+require 'sidekiq'
+
 class ScreenshotsGenerator
   include Sidekiq::Worker
 
