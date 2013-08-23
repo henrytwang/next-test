@@ -28,5 +28,5 @@ gem 'smusher'
 gem 'sidekiq'
 gem 'sinatra', require: false
 gem 'slim'
-gem 'unicorn'
+gem 'thin'
 
