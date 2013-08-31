@@ -15,19 +15,16 @@
 //= require foundation
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
 
 jQuery.ajaxSetup({
   'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript");}
 });
 
 jQuery(document).ready(function($){
+
+  $(document).foundation();
+
   $('.text-field').click(function(){
     $('.text-field').attr("value", "http://");
-  });
-
-  $('.url-form').submit(function(){
-    $.post($(this).attr('action'), $(this).serialize(), null, 'script');
-    return false;
   });
 });
