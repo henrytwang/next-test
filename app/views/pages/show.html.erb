@@ -8,15 +8,18 @@
   <div class="feedback-bar">
     <div class="row">
       <div class="large-centered" id="secondStop">
-        <%= form_for :comment, url: comments_path do |f| %>
-        <%= f.label :comment_one, "What do you like about the Landing Page Optimization on this selection?" %>
-        <%= f.text_field :comment_one %>
-        <%= f.label :comment_two, "What would you change or test on this selection?" %>
-        <%= f.text_field  :comment_two %>
-        <%= hidden_field_tag :page_id, "1" %>
+        <%= form_for :feedback, url: feedbacks_path do |f| %>
+        <%= f.label :first_answer, "What do you like about the Landing Page Optimization on this selection?" %>
+        <%= f.text_field :first_answer %>
+        <%= f.label :second_answer, "What would you change or test on this selection?" %>
+        <%= f.text_field  :second_answer %>
+        <%= hidden_field_tag :page_id, "#{@page.id}" %>
+        <%= hidden_field_tag :x_coordinate %>
+        <%= hidden_field_tag :y_coordinate %>
+        <%= hidden_field_tag :width %>
+        <%= hidden_field_tag :height %>
         <%= f.submit "Send Feedback", class: 'button', id: "lastStop" %>
         <% end %>
-
       </div>
     </div>
   </div>

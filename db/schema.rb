@@ -13,15 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20130901224016) do
 
-  create_table "comments", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "page_id"
-    t.integer  "question_id"
-    t.string   "text"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
   create_table "feedbacks", :force => true do |t|
     t.integer  "user_id"
     t.integer  "page_id"
@@ -40,11 +31,6 @@ ActiveRecord::Schema.define(:version => 20130901224016) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "questions", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "users", :force => true do |t|
     t.string   "username",                                   :null => false
     t.string   "email",                                      :null => false
@@ -52,13 +38,6 @@ ActiveRecord::Schema.define(:version => 20130901224016) do
     t.string   "image",           :default => "default.png"
     t.datetime "created_at",                                 :null => false
     t.datetime "updated_at",                                 :null => false
-  end
-
-  create_table "votes", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "comment_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
 end

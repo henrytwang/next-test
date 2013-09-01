@@ -5,9 +5,8 @@ Nexttest::Application.routes.draw do
   resources :pages do
     resources :results
   end
-  resources :comments
-  resources :votes
   resources :main
+  resources :feedbacks
 
   resources :users
   match '/signup' => 'users#new'

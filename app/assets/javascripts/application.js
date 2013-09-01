@@ -20,9 +20,14 @@
 
 function showFeedbackForm(c)
 {
-      // variables can be accessed here as
-      // c.x, c.y, c.x2, c.y2, c.w, c.h
-      $(".feedback-bar").show();
+  // variables can be accessed here as
+  // c.x, c.y, c.x2, c.y2, c.w, c.h
+  $(".feedback-bar").show();
+  $("input[id=x_coordinate]").val(c.x);
+  $("input[id=y_coordinate]").val(c.y);
+  $("input[id=width]").val(c.w);
+  $("input[id=height]").val(c.h);
+  $("#feedback_first_answer").focus();
 }
 
 function hideFeedbackForm()
@@ -58,6 +63,7 @@ jQuery(document).ready(function($){
     onSelect: showFeedbackForm,
     onRelease: hideFeedbackForm
   });
+
 
 
 });
