@@ -8,9 +8,31 @@
   bottom: 0;
   background-color: lightgrey;
   padding: 30px;
+  z-index: 2000;
 }
 
 .image {
   width: 1024px;
-  margin: 0 auto;
+  margin-bottom: 350px;
+}
+
+.parsley-error-list li {
+  list-style-type: none;
+}
+
+#page-url {
+  resize: none;
+  font-size: 20px;
+}
+
+.disableTooltips {
+  position: absolute;
+  float: right;
+  font-size: 10px;
+  bottom: 20px;
+  right: 20px;
+}
+
+.joyride-tip-guide {
+  z-index: 2000;
 }

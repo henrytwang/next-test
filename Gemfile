@@ -26,3 +26,4 @@ gem 'sidekiq'
 gem 'sinatra', require: false
 gem 'slim'
 gem 'thin'
+gem 'jquery-cookie-rails'

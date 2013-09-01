@@ -1,22 +1,43 @@
-<div class="image">
-    <%= image_tag "/screenshots/#{@page.image}", class: "annotatable" %>
-</div>
+<% if FileTest.exist?("#{Rails.root}/public/screenshots/#{@page.image}") %>
+
+  <div class="image" id="firstStop">
+    <%= image_tag "/screenshots/#{@page.image}", class: "cropbox" %>
+  </div>
 
 
-<div class="feedback-bar">
-<div class="row">
-  <div class="large-centered">
-    <%= form_for :comment, url: comments_path do |f| %>
-        <%= f.label :comment_one, "What do you like about the Landing Page Optimization on this page?" %>
+  <div class="feedback-bar">
+    <div class="row">
+      <div class="large-centered" id="secondStop">
+        <%= form_for :comment, url: comments_path do |f| %>
+        <%= f.label :comment_one, "What do you like about the Landing Page Optimization on this selection?" %>
         <%= f.text_field :comment_one %>
-        <%= f.label :comment_two, "What would you change or test on this landing page?" %>
+        <%= f.label :comment_two, "What would you change or test on this selection?" %>
         <%= f.text_field  :comment_two %>
         <%= hidden_field_tag :page_id, "1" %>
-        <%= f.submit "Send Feedback", class: 'button' %>
-    <% end %>
+        <%= f.submit "Send Feedback", class: 'button', id: "lastStop" %>
+        <% end %>
+
+      </div>
+    </div>
   </div>
-</div>
-</div>
 
+  <% unless cookies[:joyrideEnabled] == "false" %>
+  <ol class="joyride-list" data-joyride>
+    <li data-text="Sure" data-options="tipAnimation:fade">
+      <p>We're struggling with A/B testing <%= @page_url %>. Can you help us?</p>
+      <a class="disableTooltips">Stop showing tooltips</a>
+    </li>
+    <li data-text="Next" data-options="tipAnimation:fade;">
+      <p>Here's a screenshot of the landing page. You can select areas of the page and leave annotations.</p>
+    </li>
+    <li data-text="Let's get started.">
+      <p>That's it!</p>
+    </li>
+  </ol>
+  <% end %>
 
+<% else %>
 
+  "Generating screenshot... reload this page in a bit"
+
+<% end %>

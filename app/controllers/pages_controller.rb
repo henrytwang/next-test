@@ -22,5 +22,6 @@ class PagesController < ApplicationController
 
   def show
     @page = Page.find(params[:id])
+    @page_url = @page.url.sub(/^https?\:\/\//, '').sub(/^www./,'')
   end
 end

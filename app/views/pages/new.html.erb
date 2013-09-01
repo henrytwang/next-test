@@ -7,10 +7,10 @@
 
   <div class="row url-form">
     <div class="large-8 large-centered columns">
-      <%= form_for @page, url: pages_path, remote: true, class: "landing-page-form", html: { :"data-validate" => 'parsley' } do |f| %>
+      <%= form_for @page, url: pages_path, remote: true, class: "landing-page-form", html: { :"data-validate" => 'parsley', name: "urlInput" } do |f| %>
           <div class="row collapse">
             <div class="large-10 columns">
-              <%= f.text_field :url, placeholder: "Paste a link to your page", class: "text-field", type: "text", :"data-type" => "url", :"data-required" => "true", :"data-trigger" => "change", :"data-regexp" => "^https?://", :"data-regexp-message" => "Your link must begin with http:// or https://" %>
+              <%= f.text_field :url, placeholder: "Type in your landing page link", class: "text-field", type: "text", :"data-type" => "url", :"data-required" => "true", :"data-trigger" => "change", :"data-regexp" => "^https?://", :"data-regexp-message" => "Your link must begin with http:// or https://" %>
             </div>
             <div class="large-2 columns">
               <%= f.submit "Get Screenshot", class: 'button' %>
@@ -20,6 +20,7 @@
       <% end %>
   </div>
 </div>
+
 
 
 <!--
