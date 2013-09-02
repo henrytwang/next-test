@@ -1,13 +1,11 @@
-<p>What do you like about the Landing Page Optimization on this page?</p>
-<ul>
-<% @first_comments.each do |comment| %>
-  <li><%= comment.text %></li>
-<% end %>
-</ul>
+<% @feedback_collection.each do |feedback| %>
 
+<%= image_tag "/screenshots/crops/#{feedback.image}" %>
+
+<p>What do you like about the Landing Page Optimization on this page?</p>
+<p><%= feedback.first_answer %></p>
+<br>
 <p>What would you change or test on this landing page?</p>
-<ul>
-<% @second_comments.each do |comment| %>
-  <li><%= comment.text %></li>
+<p><%= feedback.second_answer %></p>
+
 <% end %>
-</ul>

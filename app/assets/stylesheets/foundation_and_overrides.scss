@@ -718,8 +718,8 @@ $body-font-color: #FFF;
 
 // Controlling default Joyride styles
 
-// $joyride-tip-bg: rgb(0,0,0);
-// $joyride-tip-default-width: 300px;
+$joyride-tip-bg: #FF0272;
+$joyride-tip-default-width: 300px;
 // $joyride-tip-padding: emCalc(18, 20, 24);
 // $joyride-tip-border: solid 1px #555;
 // $joyride-tip-radius: 4px;
@@ -733,7 +733,7 @@ $body-font-color: #FFF;
 
 // This changes the nub size
 
-// $joyride-tip-nub-size: 14px;
+$joyride-tip-nub-size: 24px;
 
 // This adjusts the styles for the timer when its enabled
 

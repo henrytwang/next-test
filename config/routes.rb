@@ -5,9 +5,8 @@ Nexttest::Application.routes.draw do
   resources :pages do
     resources :results
   end
-  resources :comments
-  resources :votes
   resources :main
+  resources :feedbacks
 
   resources :users
   match '/signup' => 'users#new'
@@ -17,7 +16,7 @@ Nexttest::Application.routes.draw do
   post   '/login'  => 'sessions#create'
   delete '/logout' => 'sessions#destroy', :via => :delete
 
-  root :to => 'main#index'
+  root :to => 'pages#new'
 
   mount Sidekiq::Web, at: '/sidekiq'
 

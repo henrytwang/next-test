@@ -12,22 +12,58 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.Jcrop
+//= require jquery.cookie
 //= require foundation
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+
+function showFeedbackForm(c)
+{
+  // variables can be accessed here as
+  // c.x, c.y, c.x2, c.y2, c.w, c.h
+  $(".feedback-bar").show();
+  $("input[id=x_coordinate]").val(c.x);
+  $("input[id=y_coordinate]").val(c.y);
+  $("input[id=width]").val(c.w);
+  $("input[id=height]").val(c.h);
+  $("#feedback_first_answer").focus();
+}
+
+function hideFeedbackForm()
+{
+  $(".feedback-bar").hide();
+}
 
 jQuery.ajaxSetup({
   'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript");}
 });
 
 jQuery(document).ready(function($){
+
+  $(document).foundation();
+
+  $(".feedback-bar").hide();
+
   $('.text-field').click(function(){
     $('.text-field').attr("value", "http://");
+    var input = $(".text-field");
+    var len = input.val().length;
+    input[0].focus();
+    input[0].setSelectionRange(len, len);
   });
 
-  $('.url-form').submit(function(){
-    $.post($(this).attr('action'), $(this).serialize(), null, 'script');
-    return false;
+  $('.disableTooltips').click(function(){
+    $(".joyride-close-tip").click();
+    $.cookie("joyrideEnabled", "false", { expires: 7 });
   });
+
+  $('.cropbox').Jcrop({
+    addClass: 'jcrop-light',
+    onSelect: showFeedbackForm,
+    onRelease: hideFeedbackForm
+  });
+
+
+
 });
