@@ -16,8 +16,13 @@
   	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
   	<%= stylesheet_link_tag    "application" %>
-    <%= stylesheet_link_tag    "annotorious" %>
-  	<%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= stylesheet_link_tag    "jquery.Jcrop" %>
+
+    <%= javascript_include_tag "parsley" %>
+    <%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "jquery.Jcrop" %>
+
     <%= csrf_meta_tags %>
   </head>
 
@@ -40,6 +45,8 @@
     <%= yield %>
 
 
-    <%= javascript_include_tag "application" %>
+  <script type="text/javascript">
+    jQuery(document).foundation('joyride', 'start');
+  </script>
   </body>
 </html>

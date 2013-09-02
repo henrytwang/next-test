@@ -11,26 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130807035335) do
+ActiveRecord::Schema.define(:version => 20130901224016) do
 
-  create_table "comments", :force => true do |t|
+  create_table "feedbacks", :force => true do |t|
     t.integer  "user_id"
     t.integer  "page_id"
-    t.integer  "question_id"
-    t.string   "text"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.text     "first_answer"
+    t.text     "second_answer"
+    t.string   "image"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "pages", :force => true do |t|
     t.integer  "user_id"
     t.string   "image"
     t.string   "url"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "questions", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -42,13 +38,6 @@ ActiveRecord::Schema.define(:version => 20130807035335) do
     t.string   "image",           :default => "default.png"
     t.datetime "created_at",                                 :null => false
     t.datetime "updated_at",                                 :null => false
-  end
-
-  create_table "votes", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "comment_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
 end

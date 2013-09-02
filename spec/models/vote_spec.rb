@@ -6,7 +6,7 @@ describe Vote do
   end
 
   describe "#new" do
-    it "returns a new vote object" do
+    it "takes two parameters and returns a new vote object" do
       @vote.should be_an_instance_of Vote
     end
   end

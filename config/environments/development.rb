@@ -2,7 +2,7 @@ Nexttest::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # Redis connection information for development
-  ENV["REDISTOGO_URL"] = 'redis://redistogo:971ff845394cd751c39efcbd9cbaee38@beardfish.redistogo.com:10256/'
+  # ENV["REDISTOGO_URL"] = 'redis://redistogo:971ff845394cd751c39efcbd9cbaee38@beardfish.redistogo.com:10256/'
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development

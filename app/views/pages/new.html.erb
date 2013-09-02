@@ -1,1 +1,29 @@
-new page
+<div class="container">
+  <div class="row large-6 large-centered columns">
+    <h1 class="main-title">Marketers, make your next move.</h1>
+    <h2 class="secondary-title">Get actionable A/B tests to run on your landing page.</h2>
+  </div>
+
+
+  <div class="row url-form">
+    <div class="large-8 large-centered columns">
+      <%= form_for @page, url: pages_path, remote: true, class: "landing-page-form", html: { :"data-validate" => 'parsley', name: "urlInput" } do |f| %>
+          <div class="row collapse">
+            <div class="large-10 columns">
+              <%= f.text_field :url, placeholder: "Type in your landing page link", class: "text-field", type: "text", :"data-type" => "url", :"data-required" => "true", :"data-trigger" => "change", :"data-regexp" => "^https?://", :"data-regexp-message" => "Your link must begin with http:// or https://" %>
+            </div>
+            <div class="large-2 columns">
+              <%= f.submit "Get Screenshot", class: 'button' %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>
+
+
+
+<!--
+<div>Click and drag to make notes</div>
+<div>Add feedback</div>
+<div>Share with others</div> -->
