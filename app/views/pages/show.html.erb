@@ -3,6 +3,7 @@
   <div class="image" id="firstStop">
     <%= image_tag "/screenshots/#{@page.image}", class: "cropbox" %>
   </div>
+  <div class="updated_on">Page captured on <%= @page.created_at.strftime("%B %l %Y, %I:%M:%S %p%z")%></div>
 
 
   <div class="feedback-bar">
